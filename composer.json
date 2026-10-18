@@ -1,23 +1,23 @@
 {
-    "name": "vicam/papyrus-pdf-fonts-ja",
-    "description": "Static Noto Sans and Serif JP Regular for PapyrusPDF forms and overlays.",
+    "name": "vicam/pdf-fonts-ja",
+    "description": "Static Noto Sans and Serif JP Regular for Vicam PDF forms and overlays.",
     "type": "library",
     "license": "proprietary",
     "require": {
         "php": "^8.3",
-        "vicam/papyrus-pdf": "^0.3.4"
+        "vicam/pdf": "^0.4.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^12.5"
     },
     "autoload": {
         "psr-4": {
-            "PapyrusPDF\\FontsJa\\": "src/"
+            "Vicam\\Pdf\\FontsJa\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PapyrusPDF\\FontsJa\\Tests\\": "tests/"
+            "Vicam\\Pdf\\FontsJa\\Tests\\": "tests/"
         }
     },
     "scripts": {

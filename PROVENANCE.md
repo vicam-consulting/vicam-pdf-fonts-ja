@@ -15,7 +15,7 @@ The font binaries are copied byte for byte from vicam/papyrus-pdf-fonts-cjk v0.3
 | `fonts/NotoSansKR-Regular.ttf` | 6,224,812 | `adaf517dd462c1ad9da1e115c36975b4deb579aa1ad71364ad9f235a073b8398` |
 | `fonts/OFL.txt` | 4,388 | `1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9` |
 
-Both are static TrueType (`glyf`) instances at weight 400, with `OS/2.fsType` 0 (installable embedding, subsetting allowed). The PapyrusPDF overlay refuses variable fonts, and Google Fonts publishes these families only as variable fonts, so the static instances were made from them:
+Both are static TrueType (`glyf`) instances at weight 400, with `OS/2.fsType` 0 (installable embedding, subsetting allowed). The Vicam PDF overlay refuses variable fonts, and Google Fonts publishes these families only as variable fonts, so the static instances were made from them:
 
 - Origin: <https://github.com/google/fonts> at commit `66928797f271fed5ee428544e7229685e2d90127`:
   - `ofl/notosanssc/NotoSansSC[wght].ttf`, SHA-256 `a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da`;
@@ -33,7 +33,7 @@ All four additions are static TrueType/glyf Regular instances at `wght=400`, mad
 with FontTools 4.66.1 `varLib.instancer` (`updateFontNames=True`,
 `recalcTimestamp=False`). Their `OS/2.fsType` is 0: embedding and subsetting are
 permitted. Variable axes and `fvar` are removed. This build step is not a runtime
-dependency. No source code was copied. PapyrusPDF supports CFF subsetting too;
+dependency. No source code was copied. Vicam PDF supports CFF subsetting too;
 these glyf instances use the already tested overlay and form subset path.
 
 - `NotoSansJP-Regular.ttf`: 5,766,828 bytes, SHA-256 `a66655d7b24ac6f793f73914c60ad44522b9fbd9e5f9b3706220b66c44fdaad2`.

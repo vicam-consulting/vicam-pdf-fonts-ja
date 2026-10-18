@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PapyrusPDF\FontsJa;
+namespace Vicam\Pdf\FontsJa;
 
-use PapyrusPDF\Forms\{FormFontFallbacks, FormFontPackage};
+use Vicam\Pdf\Forms\{FormFontFallbacks, FormFontPackage};
 
 /** Static Regular Japanese fonts; files are read lazily and subset-embedded. */
 final class NotoJa implements FormFontPackage

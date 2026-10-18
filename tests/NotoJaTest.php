@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PapyrusPDF\FontsJa\Tests;
+namespace Vicam\Pdf\FontsJa\Tests;
 
-use PapyrusPDF\FontsJa\NotoJa;
-use PapyrusPDF\Forms\{FieldAssignment, FieldValue, FormFillRequest};
-use PapyrusPDF\PdfEngineFactory;
+use Vicam\Pdf\FontsJa\NotoJa;
+use Vicam\Pdf\Forms\{FieldAssignment, FieldValue, FormFillRequest};
+use Vicam\Pdf\PdfEngineFactory;
 use PHPUnit\Framework\TestCase;
 
 final class NotoJaTest extends TestCase
@@ -27,7 +27,7 @@ final class NotoJaTest extends TestCase
             foreach ($files as $file) {
                 self::assertIsString($file);
                 self::assertFileExists($file);
-                self::assertSame([\PapyrusPDF\Forms\FormFontPackage::class], array_values(class_implements(NotoJa::class)));
+                self::assertSame([\Vicam\Pdf\Forms\FormFontPackage::class], array_values(class_implements(NotoJa::class)));
                 if (isset(self::HASHES[basename($file)])) {
                     self::assertSame(self::HASHES[basename($file)], hash_file('sha256', $file));
                 }
@@ -64,7 +64,7 @@ final class NotoJaTest extends TestCase
             try {
                 $disabled->fillForm($path, $request)->artifact->close();
                 self::fail('Without discovery a Japanese program is unavailable.');
-            } catch (\PapyrusPDF\Core\PdfException $error) {
+            } catch (\Vicam\Pdf\Core\PdfException $error) {
                 // PapyrusPDF 0.3.6 reports the uncovered value; earlier releases report the unusable field font.
                 self::assertContains($error->diagnostic, ['form.glyph-unavailable', 'form.font-unsupported']);
             }
