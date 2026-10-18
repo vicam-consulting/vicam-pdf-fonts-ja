@@ -1,0 +1,8 @@
+* text=auto
+*.ttf binary
+
+# Development-only files are left out of release archives (git archive, Composer dist). The fonts must ship.
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/phpunit.xml.dist export-ignore
+/tests export-ignore
