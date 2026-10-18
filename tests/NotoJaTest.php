@@ -65,7 +65,8 @@ final class NotoJaTest extends TestCase
                 $disabled->fillForm($path, $request)->artifact->close();
                 self::fail('Without discovery a Japanese program is unavailable.');
             } catch (\PapyrusPDF\Core\PdfException $error) {
-                self::assertSame('form.font-unsupported', $error->diagnostic);
+                // PapyrusPDF 0.3.6 reports the uncovered value; earlier releases report the unusable field font.
+                self::assertContains($error->diagnostic, ['form.glyph-unavailable', 'form.font-unsupported']);
             }
         } finally {
             foreach (glob($directory.'/*') ?: [] as $file) {
